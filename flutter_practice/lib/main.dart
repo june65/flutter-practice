@@ -7,9 +7,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'First App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue),
       home: MyHomePage(),
     );
   }
@@ -19,68 +17,98 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Flutter_Project",
-          style: TextStyle(color: Colors.white),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.blue,
-        // elevation: 0,
-        // leading: IconButton(
-        //   icon: Icon(Icons.menu),
-        //   onPressed:() {
-        //     print("히히");
-        //   },
-        // ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.shopping_cart), 
-            onPressed: () {
-              print("longitude");
-            },
+        appBar: AppBar(
+          title: Text(
+            "Flutter_Project",
+            style: TextStyle(color: Colors.white),
           ),
-          IconButton(
-            icon: Icon(Icons.search), 
-            onPressed: () {
-              print('Search button is clicked');
-            },
-          ),
-        ],
-      ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            UserAccountsDrawerHeader(
-              currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage('assets/image.jpg'),
-                backgroundColor: Colors.white,
-              ),
-              accountName: Text('BBARTO'),
-              accountEmail: Text('BBARTO@vadvto.com'),
+          centerTitle: true,
+          backgroundColor: Colors.blue,
+          // elevation: 0,
+          // leading: IconButton(
+          //   icon: Icon(Icons.menu),
+          //   onPressed:() {
+          //     print("히히");
+          //   },
+          // ),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.shopping_cart),
+              onPressed: () {
+                print("longitude");
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () {
+                print('Search button is clicked');
+              },
             ),
           ],
         ),
-      ),
-      // body: Padding(
-      //   padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
-      //   child: Column(
-      //     children: <Widget>[
-      //       Center(
-      //         child: CircleAvatar(
-      //           backgroundImage: AssetImage('assets/image.jpg'),
-      //           radius: 60,
-      //         ),
-      //       ),
-            
-      //       Text('Hello'),
-      //       Text('Hello'),
-      //       Text('Hello')
-      //     ],
-      //   ),
-      // ),
-      
-    );
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              UserAccountsDrawerHeader(
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: AssetImage('assets/image.jpg'),
+                  backgroundColor: Colors.white,
+                ),
+                accountName: Text('BBARTO'),
+                accountEmail: Text('BBARTO@vadvto.com'),
+              ),
+              ListTile(
+                leading: Icon(Icons.home),
+                title: Text(
+                  'Home',
+                ),
+                onTap: () {
+                  print('object');
+                },
+                trailing: Icon(Icons.add),
+              )
+            ],
+          ),
+        ),
+        body: Builder(
+          builder: (BuildContext ctx) {
+            return Center(
+                child: TextButton(
+                    child: Text(
+                      "show me",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onPressed: () {
+                      Scaffold.of(ctx).showSnackBar(SnackBar(
+                        content: Text('Hellow'),
+                      ));
+                    }));
+          },
+        )
+
+        // body: Padding(
+        //   padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
+        //   child: Column(
+        //     children: <Widget>[
+        //       Center(
+        //         child: CircleAvatar(
+        //           backgroundImage: AssetImage('assets/image.jpg'),
+        //           radius: 60,
+
+        //         ),
+
+        //       ),
+
+        //       Text('Hello'),
+        //       Text('Hello'),
+        //       Text('Hello')
+
+        //     ],
+
+        //   ),
+
+        // ),
+        );
   }
 }
