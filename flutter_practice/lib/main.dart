@@ -77,38 +77,38 @@ class MyHomePage extends StatelessWidget {
                 child: TextButton(
                     child: Text(
                       "show me",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.blue),
                     ),
                     onPressed: () {
-                      Scaffold.of(ctx).showSnackBar(SnackBar(
+                      ScaffoldMessenger.of(ctx).showSnackBar(SnackBar(
                         content: Text('Hellow'),
                       ));
                     }));
           },
         )
 
-        // body: Padding(
-        //   padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
-        //   child: Column(
-        //     children: <Widget>[
-        //       Center(
-        //         child: CircleAvatar(
-        //           backgroundImage: AssetImage('assets/image.jpg'),
-        //           radius: 60,
+          // body: Padding(
+          //   padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
+          //   child: Column(
+          //     children: <Widget>[
+          //       Center(
+          //         child: CircleAvatar(
+          //           backgroundImage: AssetImage('assets/image.jpg'),
+          //           radius: 60,
 
-        //         ),
+          //         ),
 
-        //       ),
+          //       ),
 
-        //       Text('Hello'),
-        //       Text('Hello'),
-        //       Text('Hello')
+          //       Text('Hello'),
+          //       Text('Hello'),
+          //       Text('Hello')
 
-        //     ],
+          //     ],
 
-        //   ),
+          //   ),
 
-        // ),
+          // ),
         );
   }
 }
