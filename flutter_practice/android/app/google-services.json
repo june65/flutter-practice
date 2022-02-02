@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "716326708348",
+    "project_id": "spartan-vertex-336808",
+    "storage_bucket": "spartan-vertex-336808.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716326708348:android:f971ff0ec2402db4c615f9",
+        "android_client_info": {
+          "package_name": "com.example.flutter_practice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716326708348-coqcfkfel3eaobt7fmmqhsbom5q5lj0u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2v0aoeAOClBwc5czhj-TA7RrNwdmAuoc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716326708348-coqcfkfel3eaobt7fmmqhsbom5q5lj0u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

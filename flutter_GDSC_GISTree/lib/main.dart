@@ -2,19 +2,8 @@ import 'dart:async';
 import 'package:geolocator/geolocator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:location/location.dart';
 
-var latitude = "";
-var longitude = "";
-
-
-Future<Position> getCurrentLocation() async {
-    Position position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high);
-        latitude = position.latitude.toString();
-        longitude = position.longitude.toString();
-    return position;
-  }
- 
 
 void main() => runApp(MyApp());
 
@@ -52,7 +41,7 @@ class MapSampleState extends State<MapSample> {
         leading: IconButton(
           icon: Icon(Icons.menu),
           onPressed:() {
-            print(latitude);
+            print("latitude");
           },
         ),
         actions: <Widget>[
@@ -60,7 +49,7 @@ class MapSampleState extends State<MapSample> {
             icon: Icon(Icons.shopping_cart), // 장바구니 아이콘 생성
             onPressed: () {
               // 아이콘 버튼 실행
-              print(longitude);
+              print("longitude");
             },
           ),
           IconButton(
@@ -81,8 +70,9 @@ class MapSampleState extends State<MapSample> {
           zoom: 17,
         ),
         // 현재 내 위치
-         myLocationEnabled: false,
-         myLocationButtonEnabled: false,
+         myLocationEnabled: true,
+         myLocationButtonEnabled: true,
+         zoomControlsEnabled: false,
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
         },
